@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="turbine-server" />
+        <module name="processing-service" />
+        <module name="auth" />
+        <module name="eureka" />
+        <module name="zuul" />
+        <module name="config-server" />
+        <module name="common" />
+        <module name="history-service" />
+        <module name="zipkin-server" />
+        <module name="card-service" />
+        <module name="account-service" />
+        <module name="dashboard" />
+        <module name="client-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
