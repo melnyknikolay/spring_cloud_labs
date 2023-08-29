@@ -6,3 +6,10 @@ server:
   port: 8802
 
 
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    should-unregister-on-shutdown: true

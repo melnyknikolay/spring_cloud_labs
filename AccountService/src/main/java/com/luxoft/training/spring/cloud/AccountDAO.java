@@ -24,7 +24,7 @@ public class AccountDAO {
     public boolean addBalance(Integer id, BigDecimal balance) {
         balanceLock.lock();
         try {
-            AccountEntity account = repo.findOne(id);
+            AccountEntity account = repo.findById(id).orElse(null);
             if (account != null) {
                 account.setBalance(account.getBalance().add(balance));
                 if (account.getBalance().compareTo(BigDecimal.ZERO) >= 0) {

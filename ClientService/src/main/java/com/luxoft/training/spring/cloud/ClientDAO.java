@@ -1,12 +1,13 @@
 package com.luxoft.training.spring.cloud;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class ClientDAO {
-    @Autowired
-    private ClientRepository repo;
+   private final ClientRepository repo;
 
     public ClientEntity create(String name) {
         ClientEntity client = new ClientEntity();
@@ -15,7 +16,7 @@ public class ClientDAO {
     }
 
     public boolean update(Integer id, String name) {
-        ClientEntity client = repo.findOne(id);
+        ClientEntity client = repo.findById(id).orElse(null);
         if (client == null) {
             return false;
         } else {
