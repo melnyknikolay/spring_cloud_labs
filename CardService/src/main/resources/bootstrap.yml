@@ -10,6 +10,4 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
-    should-unregister-on-shutdown: true
-
+      defaultZone: http://localhost:8701/eureka,http://localhost:8702/eureka

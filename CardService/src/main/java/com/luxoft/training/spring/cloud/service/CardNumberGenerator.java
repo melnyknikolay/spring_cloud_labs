@@ -1,4 +1,4 @@
-package com.luxoft.training.spring.cloud;
+package com.luxoft.training.spring.cloud.service;
 
 import org.springframework.stereotype.Component;
 

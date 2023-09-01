@@ -1,8 +1,11 @@
-package com.luxoft.training.spring.cloud;
+package com.luxoft.training.spring.cloud.web;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.luxoft.training.spring.cloud.repository.AccountDAO;
+import com.luxoft.training.spring.cloud.repository.AccountEntity;
+import com.luxoft.training.spring.cloud.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

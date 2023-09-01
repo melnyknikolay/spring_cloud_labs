@@ -1,4 +1,4 @@
-package com.luxoft.training.spring.cloud;
+package com.luxoft.training.spring.cloud.repository;
 
 public interface Client {
     Integer getId();

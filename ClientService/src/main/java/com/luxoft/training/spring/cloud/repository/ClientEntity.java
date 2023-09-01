@@ -1,4 +1,4 @@
-package com.luxoft.training.spring.cloud;
+package com.luxoft.training.spring.cloud.repository;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,5 +1,6 @@
-package com.luxoft.training.spring.cloud;
+package com.luxoft.training.spring.cloud.web;
 
+import com.luxoft.training.spring.cloud.service.CardNumberGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ public class CardRest {
     private final CardNumberGenerator cardNumberGenerator;
 
     @PostMapping("/create")
-    public String create() {
+    public String createCard() {
         return cardNumberGenerator.generate();
     }
 }

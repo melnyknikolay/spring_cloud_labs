@@ -1,7 +1,10 @@
-package com.luxoft.training.spring.cloud;
+package com.luxoft.training.spring.cloud.web;
 
 import java.util.List;
 
+import com.luxoft.training.spring.cloud.repository.ClientDAO;
+import com.luxoft.training.spring.cloud.repository.ClientEntity;
+import com.luxoft.training.spring.cloud.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

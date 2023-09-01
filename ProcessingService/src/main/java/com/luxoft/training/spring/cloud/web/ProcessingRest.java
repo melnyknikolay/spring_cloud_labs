@@ -1,11 +1,16 @@
-package com.luxoft.training.spring.cloud;
+package com.luxoft.training.spring.cloud.web;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import com.luxoft.training.spring.cloud.integration.account.AccountServiceClient;
+import com.luxoft.training.spring.cloud.integration.card.CardServiceClient;
+import com.luxoft.training.spring.cloud.repository.ProcessingEntity;
+import com.luxoft.training.spring.cloud.repository.ProcessingRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,8 +32,11 @@ public class ProcessingRest {
 
 
     @PostMapping("/issue/{accountId}")
-    public ResponseEntity<ProcessingEntity> issue(@PathVariable Integer accountId) {
-        var cardNumber = cardServiceClient.create();
+    public ResponseEntity issue(@PathVariable Integer accountId) {
+        var cardNumber = cardServiceClient.createCard();
+        if (cardNumber == null){
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("CARD_SERVICE_NOT_AVAILABLE");
+        }
         var processingEntity = new ProcessingEntity();
         processingEntity.setCard(cardNumber);
         processingEntity.setAccountId(accountId);
